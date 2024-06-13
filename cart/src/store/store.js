@@ -1,7 +1,9 @@
-import  {create} from zustand;
+import  {create} from "zustand";
 
-export default cartStore = create((set)=>{
+export const cartStore = create((set)=>({
     cart:[],
     addToCart:(products) => set((state)=> ({cart:[...state.cart,products]})),
-    removeCart:(products)=>set ((state)=>({cart:[]}))
-})
+    removeFromCart:(productId)=>set((state)=>({cart: state.cart.filter((p)=>p.id!==productId)})),
+    ClearCart:()=>set({cart:[]})
+}))
+

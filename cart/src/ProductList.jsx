@@ -1,4 +1,7 @@
-const ProductList = ({ productdata, setCart }) => {
+import { cartStore } from "./store/store";
+
+const ProductList = ({productdata}) => {
+  const addToCart = cartStore((state)=>state.addToCart)
   return (
     <div>
       {productdata.electronics.map((p) => (
@@ -6,7 +9,7 @@ const ProductList = ({ productdata, setCart }) => {
           <li>
             {p.name}
             {p.brand}
-            <button onClick={() => setCart((cart)=>[...cart,p])}>add to cart</button>
+            <button onClick={()=>addToCart(p)}>add to cart</button>
           </li>
         </ul>
       ))}
