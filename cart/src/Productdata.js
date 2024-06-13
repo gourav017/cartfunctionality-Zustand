@@ -1,5 +1,5 @@
-export const productdata = {
-  electronics: [
+export const productdata = 
+  [
     {
       id: 1,
       name: "Smartphone",
@@ -71,5 +71,4 @@ export const productdata = {
       },
       warranty: "6 months",
     },
-  ],
-};
+  ]
